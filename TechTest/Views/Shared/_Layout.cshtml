@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+    <div class="container">
+        @RenderBody()
+        <ng-view></ng-view>
+    </div>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/checklist-model.js"></script>
+    <script src="~/app/app.module.js"></script>
+
+    <script src="~/app/components/person/personController.js"></script>
+
+<script src="~/app/components/people/peopleService.js"></script>
+
+    <script src="~/app/components/colour/colourService.js"></script>
+    <script src="~/app/components/people/peopleController.js"></script>
+</body>
+</html>

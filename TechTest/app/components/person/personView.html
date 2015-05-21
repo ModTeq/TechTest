@@ -1,0 +1,44 @@
+﻿<form class="form-horizontal" role="form" name="savePersonData">
+    <h1>Update {{person.firstName}} {{person.lastName}}</h1>
+
+    <h3>User details</h3>
+    <hr />
+
+    <div class="checkbox">
+        <div class="col-md-2">
+            <label for="isAuthorised">Authorised</label>
+        </div>
+        <div class="col-md-10">
+            <input class="pull-left" id="isAuthorised" type="checkbox" ng-model="person.isAuthorised" />
+        </div>
+    </div>
+    <div class="checkbox">
+        <div class="col-md-2">
+            <label for="isEnabled">Enabled </label>
+        </div>
+        <div class="col-md-10">
+            <input class="pull-left" id="isEnabled" type="checkbox" ng-model="person.isEnabled" />
+        </div>
+    </div>
+    <h3>Favourite Colours</h3>
+    <hr />
+
+    <div ng-repeat="colour in colours">
+        <div class="checkbox">
+            <div class="col-md-2">
+                <label ng-click="hideCheckbox = ! hideCheckbox">{{colour.Name}}</label>
+            </div>
+            <div class="col-md-10">
+                <input type="checkbox" checklist-model="person.colours" checklist-value="colour" ng-hide="hideCheckbox">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-10 col-md-offset-2 row button-row">
+        <div class="pull-left">
+            <button type="button" class="btn btn-primary" ng-click="saveForm()">Save Changes</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

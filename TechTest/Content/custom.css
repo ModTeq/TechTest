@@ -1,0 +1,16 @@
+﻿.green {
+    color: #008000;
+}
+
+.red {
+    color: #ff0000;
+}
+
+.button-row {
+    margin-top: 50px;
+    padding-left: 0;
+}
+
+.button-row .btn {
+    width: 130px;
+}

@@ -1,0 +1,24 @@
+﻿
+<h1>People</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Palindrome</th>
+            <th>Authorised</th>
+            <th>Enabled</th>
+            <th>Colours</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in people">
+            <td><a ng-href="#/person/{{person.personId}}">{{person.firstName}} {{person.lastName}}</a></td>
+            <td ng-class="{green: isPalindrome(person.firstName + ' ' + person.lastName) == 'Yes', red: isPalindrome(person.firstName + ' ' + person.lastName) == 'No'}">{{isPalindrome(person.firstName + ' ' + person.lastName)}}</td>
+            <td ng-class="{green: person.isAuthorised == 'Yes', red: person.isAuthorised == 'No'}">{{person.isAuthorised}}</td>
+            <td ng-class="{green: person.isEnabled == 'Yes', red: person.isEnabled == 'No'}">{{person.isEnabled}}</td>
+            <td>{{person.colours.join(', ')}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
